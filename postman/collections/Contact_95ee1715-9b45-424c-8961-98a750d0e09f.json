@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "206b1069-0027-43c8-aa21-9b2959030a29",
+		"name": "Contact",
+		"description": "Contacts of user.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get list contacts",
+			"id": "e2a94f1d-aa7a-40e6-b3d8-5180c3bbeca3",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/contact?user_id=<email>",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"contact"
+					],
+					"query": [
+						{
+							"key": "user_id",
+							"value": "<email>"
+						}
+					]
+				},
+				"description": "Get lists contacts of user."
+			},
+			"response": [
+				{
+					"id": "299a790a-0bdb-46ec-ae2f-90d4b0f5c709",
+					"name": "200 response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/contact?user_id=aaaaa@xxx.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contact"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "aaaaa@xxx.com"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"disabled": false,
+							"description": "A link to the next page of responses",
+							"key": "x-next",
+							"value": "sed ad consequat"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"contacts\": [\n      {\n          \"userId\": \"aaaaa@xxx.com\",\n          \"contactId\": \"abc@xxx.com\",\n          \"contactName\": \"abc\",\n          \"contactDepartment\": \"IT\",\n          \"emailContact\": \"abc@xxx.com\",\n          \"exchangeDate\": \"2022-05-17\"\n      },\n      {\n          \"userId\": \"aaaaa@xxx.com\",\n          \"contact_id\": \"def@xxx.com\",\n          \"contactName\": \"def\",\n          \"contactDepartment\": \"COM\",\n          \"emailContact\": \"def11@xxx.com\",\n          \"exchangeDate\": \"2022-05-02\"\n      }\n  ]\n}"
+				},
+				{
+					"id": "3452d554-43d0-492e-b24f-526383e185d3",
+					"name": "500 response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: basic",
+								"key": "Authorization",
+								"value": "Basic <credentials>"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/user?user_id=xxx@xxx.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "xxx@xxx.com"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error\": {\n        \"code\" : \"500\",\n        \"message\": \"unsuccessful\"\n    }\n   \n}"
+				}
+			]
+		},
+		{
+			"name": "Add contact",
+			"id": "5a72d5a8-4f0b-4c83-9e73-3da0871ed40b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"aaaaa@xxx.com\",\r\n    \"contactId\": \"abc@xxx.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/contact/add",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"contact",
+						"add"
+					]
+				},
+				"description": "Add contact exchange."
+			},
+			"response": [
+				{
+					"id": "391df29c-5ebc-49b1-aab3-57a77bcd5a8f",
+					"name": "200 response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"aaaaa@xxx.com\",\r\n    \"contactId\": \"abc@xxx.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/contact/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contact",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Add contact successfully.\"\n}"
+				},
+				{
+					"id": "4afbd1e2-8412-46f3-b279-f0d30ba1fafb",
+					"name": "500 response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"aaaaa@xxx.com\",\r\n    \"contactId\": \"abc@xxx.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/contact/add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contact",
+								"add"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error\": {\n        \"code\": \"500\",\n        \"message\": \"unsuccessful\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete contact",
+			"id": "ec6ea9e5-4876-422e-bae0-6220e2779310",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"aaaaa@xxx.com\",\r\n    \"contactId\": \"abc@xxx.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/contact/delete",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"contact",
+						"delete"
+					]
+				},
+				"description": "Delete contact."
+			},
+			"response": [
+				{
+					"id": "4f917559-4699-4ce0-82b6-cc576c47cf8d",
+					"name": "200 response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"aaaaa@xxx.com\",\r\n    \"contactId\": \"abc@xxx.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/contact/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contact",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"message\": \"Delete contact successfully.\"\n}"
+				},
+				{
+					"id": "b7baf698-1217-4561-953d-8516f2d08a61",
+					"name": "500 response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"aaaaa@xxx.com\",\r\n    \"contactId\": \"abc@xxx.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/contact/delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"contact",
+								"delete"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": null,
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\r\n    \"error\": {\r\n        \"code\": \"500\",\r\n        \"message\": \"unsuccessful\"\r\n    }\r\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "grant_type",
+				"value": "password_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "queryParams",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7dc44458-1523-41c3-b4ae-c1fe6b9a4970",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "73cad076-6822-4a9c-b6b5-5c9251b0e3e7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "311a5192-f57a-4b4e-b49b-a7e70096bac2",
+			"key": "baseUrl",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}
