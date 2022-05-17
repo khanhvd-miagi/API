@@ -90,7 +90,7 @@
 					],
 					"cookie": [],
 					"responseTime": null,
-					"body": "{\n  \"contacts\": [\n      {\n          \"userId\": \"aaaaa@xxx.com\",\n          \"contactId\": \"abc@xxx.com\",\n          \"contactName\": \"abc\",\n          \"contactDepartment\": \"IT\",\n          \"emailContact\": \"abc@xxx.com\",\n          \"exchangeDate\": \"2022-05-17\"\n      },\n      {\n          \"userId\": \"aaaaa@xxx.com\",\n          \"contact_id\": \"def@xxx.com\",\n          \"contactName\": \"def\",\n          \"contactDepartment\": \"COM\",\n          \"emailContact\": \"def11@xxx.com\",\n          \"exchangeDate\": \"2022-05-02\"\n      }\n  ]\n}"
+					"body": "{\n  \"contacts\": [\n      {\n          \"userId\": \"aaaaa@xxx.com\",\n          \"contactId\": \"abc@xxx.com\",\n          \"contactName\": \"abc\",\n          \"contactDepartment\": \"IT\",\n          \"emailContact\": \"abc@xxx.com\",\n          \"exchangeDate\": \"2022-05-17\"\n      },\n      {\n          \"userId\": \"aaaaa@xxx.com\",\n          \"contact_id\": \"def@xxx.com\",\n          \"contactName\": \"def\",\n          \"contactDepartment\": \"Test\",\n          \"emailContact\": \"def11@xxx.com\",\n          \"exchangeDate\": \"2022-05-02\"\n      }\n  ]\n}"
 				},
 				{
 					"id": "3452d554-43d0-492e-b24f-526383e185d3",
@@ -377,7 +377,7 @@
 	],
 	"variable": [
 		{
-			"id": "311a5192-f57a-4b4e-b49b-a7e70096bac2",
+			"id": "01bb9824-5857-4a7a-b7cd-cfb7d39acc34",
 			"key": "baseUrl",
 			"value": "localhost:3000",
 			"type": "string"
